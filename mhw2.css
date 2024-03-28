@@ -1,6 +1,6 @@
 :root {
     --articlecontainerdimensionheight: 65.5vh;
-    --articlecontainerdimensionheightlapt: 88.5vh;
+    --articlecontainerdimensionheightlapt: 40vw;
     --unidivheight: 17vh;
     --paddingunidiv: 10px 0px;
     --logonavheight: 9.8vh;
@@ -110,7 +110,7 @@
     align-items: center;
     flex-direction: row;
     background-color: #264e4a00;
-    height: var(--articlecontainerdimensionheight);
+    
   }
   #h1article {
     height: auto;
@@ -164,11 +164,13 @@
     margin-top: 4vh;
   }
   #articleimg {
+    display: flex;
     background-color: rgba(72, 224, 12, 0);
-    width: 60vh;
+    width: 40vw;
     margin-top: 2vh;
     margin-bottom: 2vh;
-  }
+    height: var(--articlecontainerdimensionheight);
+    }
   #articleimg img {
     height: auto;
     width: 100%;
@@ -608,6 +610,10 @@
     .logonav {
       display: flex;
       height: var(--logonavheight);
+    }
+    #articleimg{
+      height: var(--articlecontainerdimensionheightlapt);
+     
     }
   }
   
