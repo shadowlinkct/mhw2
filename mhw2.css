@@ -780,7 +780,10 @@ div.academy-container span {
   #h1article p {
     margin-top: 2.7vh;
   }
-
+#articleimg{
+  width: 100%;
+height: auto;
+}
   .group,
   .group2 {
     height: 100%;
