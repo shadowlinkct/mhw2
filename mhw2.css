@@ -200,13 +200,18 @@ a#alink2:hover {
   color: #ffffff;
   display: flex;
   align-items: center;
-  padding: 20px 20px;
+  padding: 12px 20px;
   position: fixed;
   right: 5vw;
   bottom: 2.5vw;
   font-size: 1.1em;
-  ;
   font-weight: bold;
+}
+.fixed-button p{
+  border: 2px solid;
+  border-radius: 100px;
+  padding: 0px 7px;
+  margin: 5px;
 }
 
 .academy-section {
@@ -604,14 +609,6 @@ div.academy-container span {
     width: 100%;
   }
 
-  .fixed-button {
-    padding: 20px 20px;
-    position: fixed;
-    right: 5vw;
-    bottom: 2.5vw;
-    font-size: 1.1em;
-  }
-
   .academy-item {
     margin: 0;
     width: 100%;
@@ -735,11 +732,13 @@ div.academy-container span {
 @media only screen and (max-width: 768px) {
   .fixed-button a {
     display: none;
-
+  }
+  .fixed-button p {
+    margin: 0;
   }
 
   .fixed-button {
-    padding: 10px 17px;
+    padding: 7px 7px;
   }
 
   #logodiv img {
