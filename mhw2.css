@@ -15,15 +15,62 @@
 body {
   font-family: Roboto Condensed, sans-serif;
 }
-#iconmenu{
+
+/* Nascondi tutti i contenuti dei dropdown all'avvio */
+.dropdown-content {
+  display: none;
+}
+
+/* Stile dei link principali */
+.centerlink div {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Stile dei link dropdown */
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Stile del dropdown quando aperto */
+.dropdown-content.active {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  width: 30%;
+}
+.dropdown-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00ffe500;
+  width: 100%;
+  position: absolute;
+}
+.dropdown-content p{
+  display: block;
+    border-bottom: 1px solid #b4b4b4;
+    /* Aggiunge un bordo inferiore di 2 pixel di spessore, nero */
+    padding: 20px 25px;
+    /* Opzionale: aggiunge un padding per separare il testo dal bordo */
+    text-decoration: none;
+    /* Rimuove la sottolineatura predefinita */
+}
+#iconmenu {
   justify-content: center;
   align-items: center;
   flex-direction: row;
   display: none;
 }
-#iconmenu p{
+
+#iconmenu p {
   margin-right: 1vh;
 }
+
 #menu {
   display: none;
 }
@@ -34,12 +81,15 @@ body {
   background-color: rgb(0, 0, 0);
   margin: 5px 0;
 }
-#active div{
-  display: none;
- }
-.hidden{
+
+#active div {
   display: none;
 }
+
+.hidden {
+  display: none;
+}
+
 #flexlogin {
   background-color: rgba(41, 39, 40, 255);
   display: flex;
@@ -61,7 +111,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 36.3%;
   height: 100%;
 }
 
@@ -70,6 +119,8 @@ div.centerlink a {
   font-size: 1em;
   color: #2C2D33;
   padding: 0.5% 0.5%;
+  margin-right: 3vh;
+  white-space: nowrap;
 }
 
 div.centerlink a:hover {
@@ -220,7 +271,8 @@ a#alink2:hover {
   font-size: 1.1em;
   font-weight: bold;
 }
-.fixed-button p{
+
+.fixed-button p {
   border: 2px solid;
   border-radius: 100px;
   padding: 0px 7px;
@@ -641,9 +693,11 @@ div.academy-container span {
   .multisectioncontainer {
     flex-direction: column;
   }
+
   .largetabitem {
     width: 100%
   }
+
   .imagelargetab {
     height: 54%;
     width: 100%;
@@ -662,6 +716,7 @@ div.academy-container span {
     width: 100%;
     height: auto;
   }
+
   .mediumtabitem {
     width: 100%
   }
@@ -703,22 +758,29 @@ div.academy-container span {
     display: block;
     margin-right: 2vw;
   }
+
   /* Stile per la topbar */
-#active {
-  position: absolute;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  z-index: 9999;
-  font-weight: bold;
-}
-#active div{
-  display: block;
-    border-top: 1px solid #b4b4b4; /* Aggiunge un bordo superiore di 2 pixel di spessore, nero */
-    border-bottom: 1px solid #b4b4b4; /* Aggiunge un bordo inferiore di 2 pixel di spessore, nero */
-    padding:20px 25px; /* Opzionale: aggiunge un padding per separare il testo dal bordo */
-    text-decoration: none; /* Rimuove la sottolineatura predefinita */
-}
-  #iconmenu{
+  #active {
+    position: absolute;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 9999;
+    font-weight: bold;
+  }
+
+  #active div{
+    display: block;
+    border-top: 1px solid #b4b4b4;
+    /* Aggiunge un bordo superiore di 2 pixel di spessore, nero */
+    border-bottom: 1px solid #b4b4b4;
+    /* Aggiunge un bordo inferiore di 2 pixel di spessore, nero */
+    padding: 20px 25px;
+    /* Opzionale: aggiunge un padding per separare il testo dal bordo */
+    text-decoration: none;
+    /* Rimuove la sottolineatura predefinita */
+  }
+
+  #iconmenu {
     display: flex;
   }
 
@@ -763,6 +825,7 @@ div.academy-container span {
   .fixed-button a {
     display: none;
   }
+
   .fixed-button p {
     margin: 0;
   }
