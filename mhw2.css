@@ -15,7 +15,31 @@
 body {
   font-family: Roboto Condensed, sans-serif;
 }
+#iconmenu{
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  display: none;
+}
+#iconmenu p{
+  margin-right: 1vh;
+}
+#menu {
+  display: none;
+}
 
+#menu div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(0, 0, 0);
+  margin: 5px 0;
+}
+#active div{
+  display: none;
+ }
+.hidden{
+  display: none;
+}
 #flexlogin {
   background-color: rgba(41, 39, 40, 255);
   display: flex;
@@ -180,17 +204,6 @@ a#alink2:hover {
 #articleimg img {
   height: auto;
   width: 100%;
-}
-
-#menu {
-  display: none;
-}
-
-#menu div {
-  width: 25px;
-  height: 3px;
-  background-color: rgb(0, 0, 0);
-  margin: 5px 0;
 }
 
 .fixed-button {
@@ -570,7 +583,6 @@ div.academy-container span {
 
   #logodiv {
     width: 27vw;
-    z-index: 0;
   }
 
   #logodiv img {
@@ -690,6 +702,24 @@ div.academy-container span {
   #menu {
     display: block;
     margin-right: 2vw;
+  }
+  /* Stile per la topbar */
+#active {
+  position: absolute;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 9999;
+  font-weight: bold;
+}
+#active div{
+  display: block;
+    border-top: 1px solid #b4b4b4; /* Aggiunge un bordo superiore di 2 pixel di spessore, nero */
+    border-bottom: 1px solid #b4b4b4; /* Aggiunge un bordo inferiore di 2 pixel di spessore, nero */
+    padding:20px 25px; /* Opzionale: aggiunge un padding per separare il testo dal bordo */
+    text-decoration: none; /* Rimuove la sottolineatura predefinita */
+}
+  #iconmenu{
+    display: flex;
   }
 
   .academy-section {
@@ -863,6 +893,5 @@ div.academy-container span {
     align-items: center;
     height: auto;
     width: 55%;
-    z-index: 0;
   }
 }
