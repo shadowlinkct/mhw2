@@ -16,12 +16,124 @@ body {
   font-family: Roboto Condensed, sans-serif;
 }
 
+/*---- BOTTONE ASSISTENZA ----*/
+.fixed-button {
+  font-family: "PT Sans", sans-serif;
+  background-color: #264E4A;
+  border-radius: 100px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  position: fixed;
+  right: 5vw;
+  bottom: 2.5vw;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.fixed-button p {
+  border: 2px solid;
+  border-radius: 100px;
+  padding: 0px 7px;
+  margin: 5px;
+}
+/*---- BOTTONE ASSISTENZA FINE ----*/
+
+/*---- MINI-NAV ----*/
+#flexlogin {
+  background-color: rgba(41, 39, 40, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.8vh;
+}
+#loginelemcontainer {
+  background-color: rgba(41, 39, 40, 255);
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  margin-left: 3.3%;
+  margin-right: 3.3%;
+  align-items: center;
+}
+div#loginelemcontainer a {
+  color: rgba(161, 165, 167, 255);
+  margin: 0;
+  font-size: 0.9em;
+}
+.group,
+.group2 {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group {
+  margin-left: 8%;
+  width: 13%;
+}
+
+.group2 {
+  margin-right: 9%;
+  width: 12%;
+}
+/*---- MINI-NAV FINE ----*/
+
+/*---- NAV PRINCIPALE ----*/
+.logonav {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: var(--logonavheight);
+}
+
+#logodiv {
+  background-color: rgba(43, 174, 226, 0);
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: 33.3%;
+  z-index: 0;
+}
+
+#logodiv img {
+  height: auto;
+  width: 200px;
+  margin-left: 32%;
+}
+.centerlink {
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 100%;
+  white-space: nowrap;
+}
+.centerlink img {
+  height: auto;
+  width: 27px;
+  padding: 5px;
+}
 .centerlink div {
   display: inline-block;
   margin-right: 10px;
   cursor: pointer;
 }
+div.centerlink a {
+  font-weight: bold;
+  font-size: 1em;
+  color: #2C2D33;
+  white-space: nowrap;
+}
 
+div.centerlink a:hover {
+  opacity: 0.9;
+}
 .dropdown-content a {
   display: block;
   padding: 10px;
@@ -92,38 +204,6 @@ body {
   display: none;
 }
 
-#flexlogin {
-  background-color: rgba(41, 39, 40, 255);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 4.8vh;
-}
-
-.logonav {
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: var(--logonavheight);
-}
-
-.centerlink {
-  background-color: rgba(255, 255, 255, 0);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
-  height: 100%;
-  white-space: nowrap;
-}
-
-.centerlink img {
-  height: auto;
-  width: 27px;
-  padding: 5px;
-}
-
 #blog,
 #libri,
 #rivista,
@@ -133,68 +213,9 @@ body {
   display: flex;
   align-items: center;
 }
+/*---- NAV PRINCIPALE FINE ----*/
 
-div.centerlink a {
-  font-weight: bold;
-  font-size: 1em;
-  color: #2C2D33;
-  white-space: nowrap;
-}
-
-div.centerlink a:hover {
-  opacity: 0.9;
-}
-
-#logodiv {
-  background-color: rgba(43, 174, 226, 0);
-  display: flex;
-  align-items: center;
-  height: auto;
-  width: 33.3%;
-  z-index: 0;
-}
-
-#logodiv img {
-  height: auto;
-  width: 200px;
-  margin-left: 32%;
-}
-
-#loginelemcontainer {
-  background-color: rgba(41, 39, 40, 255);
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  margin-left: 3.3%;
-  margin-right: 3.3%;
-  align-items: center;
-}
-
-div#loginelemcontainer a {
-  color: rgba(161, 165, 167, 255);
-  margin: 0;
-  font-size: 0.9em;
-}
-
-.group,
-.group2 {
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.group {
-  margin-left: 8%;
-  width: 13%;
-}
-
-.group2 {
-  margin-right: 9%;
-  width: 12%;
-}
-
+/*---- ARTICLE ----*/
 .articlecontainer {
   background-color: rgba(6, 11, 16, 255);
 }
@@ -274,29 +295,9 @@ a#alink2:hover {
   height: auto;
   width: 100%;
 }
+/*---- ARTICLE FINE ----*/
 
-.fixed-button {
-  font-family: "PT Sans", sans-serif;
-  background-color: #264E4A;
-  border-radius: 100px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  position: fixed;
-  right: 5vw;
-  bottom: 2.5vw;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-.fixed-button p {
-  border: 2px solid;
-  border-radius: 100px;
-  padding: 0px 7px;
-  margin: 5px;
-}
-
+/*---- SECTION DOUBLE CONTENT ----*/
 .academy-section {
   display: flex;
   align-items: center;
@@ -308,17 +309,6 @@ a#alink2:hover {
   background-color: rgba(102, 51, 153, 0);
   width: 61%;
 }
-
-.academy-description {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0);
-  height: 100%;
-  width: 100%;
-  padding: 10px;
-}
-
 .academy-item {
   background-color: #ffffff;
   display: flex;
@@ -328,7 +318,6 @@ a#alink2:hover {
   padding: var(--paddingunidiv);
   height: var(--unidivheight);
 }
-
 .academy-content {
   display: flex;
   align-items: center;
@@ -339,7 +328,15 @@ a#alink2:hover {
   margin: 2px;
   box-shadow: 0px 0px 0.5px 0.5px #dcdbdb;
 }
-
+.academy-description {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
 div.academy-container span,
 .academy-link {
   font-family: 'Montserrat', sans-serif;
@@ -373,7 +370,9 @@ div.academy-container span {
   width: auto;
   height: 100%;
 }
+/*---- SECTION DOUBLE CONTENT FINE ----*/
 
+/*---- MULTI NEWS SECTION ----*/
 .multisection {
   background-color: #c32d3200;
   display: flex;
@@ -450,7 +449,7 @@ div.academy-container span {
   line-height: 1.7;
 }
 
-/*---MEDIUMITEM---*/
+/*-------MEDIUMITEM-------*/
 .mediumtabcontainer {
   flex: 1;
   display: flex;
@@ -511,9 +510,9 @@ div.academy-container span {
   font-weight: 400;
 }
 
-/*---MEDIUMITEM---*/
+/*-------MEDIUMITEM-------*/
 
-/*---SMALLITEM---*/
+/*-------SMALLITEM-------*/
 .smallitemsection {
   background-color: #c32d3200;
   display: flex;
@@ -594,7 +593,10 @@ div.academy-container span {
   font-weight: 400;
 }
 
-/*---SMALLITEM---*/
+/*-------SMALLITEM-------*/
+/*---- MULTI NEWS SECTION FINE ----*/
+
+/*---- FOOTER ----*/
 .footer-container {
   display: flex;
   justify-content: center;
@@ -643,9 +645,11 @@ div.academy-container span {
 .icon-item img {
   width: 100%;
 }
+/*---- FOOTER FINE ----*/
 
-/*----MEDIA QUERY---*/
-/*(laptop con schermi di grandi dimensioni e desktop, 1670px e meno) */
+/*--------MEDIA QUERY--------*/
+
+/*----(laptop con schermi di grandi dimensioni e desktop, 1670px e meno) ----*/
 @media (max-width: 1670px) {
   #flexlogin {
     height: 6.2vh;
@@ -669,11 +673,6 @@ div.academy-container span {
 
   .centerlink {
     width: 46.3%;
-    height: 100%;
-  }
-
-  .group,
-  .group2 {
     height: 100%;
   }
 
@@ -706,7 +705,7 @@ div.academy-container span {
   }
 }
 
-/*(laptop con schermi di piccole dimensioni, 1200px e meno) */
+/*----(laptop con schermi di piccole dimensioni, 1200px e meno) ----*/
 @media screen and (max-width: 1200px) {
   .multisectioncontainer {
     flex-direction: column;
@@ -777,7 +776,7 @@ div.academy-container span {
     margin-right: 2vw;
   }
 
-  /* Stile per la topbar */
+  /*---- Stile per la topbar ----*/
   #active {
     position: absolute;
     width: 100%;
@@ -789,13 +788,13 @@ div.academy-container span {
   #active div {
     display: block;
     border-top: 1px solid #b4b4b4;
-    /* Aggiunge un bordo superiore di 2 pixel di spessore, nero */
+    /*---- Aggiunge un bordo superiore di 2 pixel di spessore, nero ----*/
     border-bottom: 1px solid #b4b4b4;
-    /* Aggiunge un bordo inferiore di 2 pixel di spessore, nero */
+    /*---- Aggiunge un bordo inferiore di 2 pixel di spessore, nero ----*/
     padding: 20px 25px;
-    /* Opzionale: aggiunge un padding per separare il testo dal bordo */
+    /*---- Opzionale: aggiunge un padding per separare il testo dal bordo ----*/
     text-decoration: none;
-    /* Rimuove la sottolineatura predefinita */
+    /*---- Rimuove la sottolineatura predefinita ----*/
   }
 
   #iconmenu {
@@ -821,7 +820,7 @@ div.academy-container span {
   }
 }
 
-/*(landscape tablets, 992px e meno) */
+/*----(landscape tablets, 992px e meno) ----*/
 @media only screen and (max-width: 992px) {
   .footer-text {
     flex-direction: column;
@@ -838,7 +837,7 @@ div.academy-container span {
   }
 }
 
-/*(portrait tablets e telefoni di grandi dimensioni, 768px e meno) */
+/*----(portrait tablets e telefoni di grandi dimensioni, 768px e meno) ----*/
 @media only screen and (max-width: 768px) {
   .fixed-button a {
     display: none;
@@ -883,11 +882,6 @@ div.academy-container span {
   #articleimg {
     width: 100%;
     height: auto;
-  }
-
-  .group,
-  .group2 {
-    height: 100%;
   }
 
   .group {
@@ -946,7 +940,7 @@ div.academy-container span {
   }
 }
 
-/*(telefoni, 600px e meno) */
+/*----(telefoni, 600px e meno) ----*/
 @media only screen and (max-width: 600px) {
   div#h1article h1 {
     font-size: 10.8vw;
