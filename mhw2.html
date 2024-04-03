@@ -42,15 +42,14 @@
                     <img src="img\logo.png" alt="Descrizione dell'immagine">
                 </div>
                 <div class="centerlink">
-                    <div id="blog"><a>BLOG</a></div>
-                    <div id="libri"><a>LIBRI</a></div>
-                    <div id="rivista"><a>RIVISTA</div></a>
-                    <div id="videovorsi"><a>VIDEOCORSI</a></div>
-                    <div id="formazioni"><a>FORMAZIONI</a></div>
-                    <div id="personal"><a>PERSONAL TRAINER</a></div>
+                    <div class="toggle-item" id="blog"><a>BLOG</a><img src="img/forward-arrow.png" /></div>
+                    <div class="toggle-item" id="libri"><a>LIBRI</a><img src="img/forward-arrow.png" /></div>
+                    <div class="toggle-item" id="rivista"><a>RIVISTA</a><img src="img/forward-arrow.png" /></div>
+                    <div class="toggle-item" id="videocorsi"><a>VIDEOCORSI</a><img src="img/forward-arrow.png" /></div>
+                    <div class="toggle-item" id="formazioni"><a>FORMAZIONI</a><img src="img/forward-arrow.png" /></div>
+                    <div class="toggle-item" id="personal"><a>PERSONAL TRAINER</a><img src="img/forward-arrow.png" /></div>
                 </div>
-               
-                  
+
                 <div id="iconmenu">
                     <p>MENU</p>
                     <div id="menu">
@@ -69,25 +68,45 @@
                 <div><a>PERSONAL TRAINER</a></div>
             </div>
             <div class="dropdown-center">
-             <div class="dropdown-content" id="blogContent">
-                    <p>ciao</p>
-                  </div>
-                  <div class="dropdown-content" id="libriContent">
-                    <!-- Contenuto del dropdown per i libri -->
-                  </div>
-                  <div class="dropdown-content" id="rivistaContent">
-                    <!-- Contenuto del dropdown per la rivista -->
-                  </div>
-                  <div class="dropdown-content" id="videocorsiContent">
-                    <!-- Contenuto del dropdown per i videocorsi -->
-                  </div>
-                  <div class="dropdown-content" id="formazioniContent">
-                    <!-- Contenuto del dropdown per le formazioni -->
-                  </div>
-                  <div class="dropdown-content" id="personalContent">
-                    <!-- Contenuto del dropdown per il personal trainer -->
-                  </div>
+                <div class="dropdown-content hidden" id="blogContent">
+                    <div class="titledropdown">
+                        <h3> BLOG </h3> 
+                    </div>
+                    <div><p>ciao blog</p></div>
                 </div>
+                <div class="dropdown-content hidden" id="libriContent">
+                    <div class="titledropdown">
+                        <h3> LIBRI </h3> 
+                    </div>
+                    <div><p>ciao libri</p></div>
+                </div>
+                <div class="dropdown-content hidden" id="rivistaContent">
+                    <div class="titledropdown">
+                        <h3> RIVISTA </h3> 
+                    </div>
+                    <div><p>ciao rivista</p></div>
+                </div>
+                <div class="dropdown-content hidden" id="videocorsiContent">
+                    <div class="titledropdown">
+                        <h3> VIDEOCORSI </h3> 
+                    </div>
+                    <div><p>ciao videocorsi</p></div>
+                </div>
+                <div class="dropdown-content hidden" id="formazioniContent">
+                    <div class="titledropdown">
+                        <h3> FORMAZIONI </h3> 
+                    </div>
+                    <div><p>ciao formazioni</p></div>
+                </div>
+                <div class="dropdown-content hidden" id="personalContent">
+                    <div class="titledropdown">
+                        <h3> PERSONAL TRAINER </h3> 
+                    </div>
+                    <div><p>ciao personal trainer</p></div>
+                </div>
+            </div>
+            
+            </div>
         </nav>
     </header>
     <article>
@@ -107,7 +126,7 @@
                             scolpire il tuo corpo con successo.
                         </p>
                     </div>
-                    <div id="divalink"><a id="alink2" href="">Scopri i due volumi</a></div>
+                    <div data-info1="Info 1" data-info2="Info 2" data-info3="Info 3" id="divalink"><a id="alink2" href="">Scopri i due volumi</a></div>
                 </div>
                 <div id="articleimg">
                     <img src="img\Scienza-e-pratica-natural-bodybuilding-1.jpg" alt="">

@@ -16,34 +16,19 @@ body {
   font-family: Roboto Condensed, sans-serif;
 }
 
-/* Nascondi tutti i contenuti dei dropdown all'avvio */
-.dropdown-content {
-  display: none;
-}
-
-/* Stile dei link principali */
 .centerlink div {
   display: inline-block;
   margin-right: 10px;
   cursor: pointer;
 }
 
-/* Stile dei link dropdown */
 .dropdown-content a {
   display: block;
   padding: 10px;
   text-decoration: none;
   color: black;
 }
-
-/* Stile del dropdown quando aperto */
-.dropdown-content.active {
-  display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  width: 30%;
-}
-.dropdown-center{
+.dropdown-center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,15 +36,32 @@ body {
   width: 100%;
   position: absolute;
 }
-.dropdown-content p{
-  display: block;
-    border-bottom: 1px solid #b4b4b4;
-    /* Aggiunge un bordo inferiore di 2 pixel di spessore, nero */
-    padding: 20px 25px;
-    /* Opzionale: aggiunge un padding per separare il testo dal bordo */
-    text-decoration: none;
-    /* Rimuove la sottolineatura predefinita */
+
+.dropdown-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 30%;
 }
+
+.titledropdown {
+  background-color: #c32d3200;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  font-size: 1em;
+  border-bottom: 1px solid #b4b4b4;
+  margin: auto;
+}
+
+.dropdown-content p {
+  display: block;
+  border-bottom: 1px solid #b4b4b4;
+  padding: 20px 25px;
+  text-decoration: none;
+}
+
 #iconmenu {
   justify-content: center;
   align-items: center;
@@ -111,15 +113,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-direction: row;
   height: 100%;
+  white-space: nowrap;
+}
+
+.centerlink img {
+  height: auto;
+  width: 27px;
+  padding: 5px;
+}
+
+#blog,
+#libri,
+#rivista,
+#videocorsi,
+#formazioni,
+#personal {
+  display: flex;
+  align-items: center;
 }
 
 div.centerlink a {
   font-weight: bold;
   font-size: 1em;
   color: #2C2D33;
-  padding: 0.5% 0.5%;
-  margin-right: 3vh;
   white-space: nowrap;
 }
 
@@ -768,7 +786,7 @@ div.academy-container span {
     font-weight: bold;
   }
 
-  #active div{
+  #active div {
     display: block;
     border-top: 1px solid #b4b4b4;
     /* Aggiunge un bordo superiore di 2 pixel di spessore, nero */
