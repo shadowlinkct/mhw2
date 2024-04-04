@@ -1,4 +1,3 @@
-
 :root {
   --articlecontainerdimensionheight: 65.5vh;
   --articlecontainerdimensionheightlapt: 40vw;
@@ -39,6 +38,7 @@ body {
   padding: 0px 7px;
   margin: 5px;
 }
+
 /*---- BOTTONE ASSISTENZA FINE ----*/
 
 /*---- MINI-NAV ----*/
@@ -49,6 +49,7 @@ body {
   align-items: center;
   height: 4.8vh;
 }
+
 #loginelemcontainer {
   background-color: rgba(41, 39, 40, 255);
   display: flex;
@@ -59,11 +60,13 @@ body {
   margin-right: 3.3%;
   align-items: center;
 }
+
 div#loginelemcontainer a {
   color: rgba(161, 165, 167, 255);
   margin: 0;
   font-size: 0.9em;
 }
+
 .group,
 .group2 {
   display: flex;
@@ -81,6 +84,7 @@ div#loginelemcontainer a {
   margin-right: 9%;
   width: 12%;
 }
+
 /*---- MINI-NAV FINE ----*/
 
 /*---- NAV PRINCIPALE ----*/
@@ -106,6 +110,7 @@ div#loginelemcontainer a {
   width: 200px;
   margin-left: 32%;
 }
+
 .centerlink {
   background-color: rgba(255, 255, 255, 0);
   display: flex;
@@ -115,16 +120,19 @@ div#loginelemcontainer a {
   height: 100%;
   white-space: nowrap;
 }
+
 .centerlink img {
   height: auto;
   width: 27px;
   padding: 5px;
 }
+
 .centerlink div {
   display: inline-block;
   margin-right: 10px;
   cursor: pointer;
 }
+
 div.centerlink a {
   font-weight: bold;
   font-size: 1em;
@@ -135,12 +143,14 @@ div.centerlink a {
 div.centerlink a:hover {
   opacity: 0.9;
 }
+
 .dropdown-content a {
   display: block;
   padding: 10px;
   text-decoration: none;
   color: black;
 }
+
 .dropdown-center {
   display: flex;
   align-items: center;
@@ -214,6 +224,7 @@ div.centerlink a:hover {
   display: flex;
   align-items: center;
 }
+
 /*---- NAV PRINCIPALE FINE ----*/
 
 /*---- ARTICLE ----*/
@@ -296,6 +307,7 @@ a#alink2:hover {
   height: auto;
   width: 100%;
 }
+
 /*---- ARTICLE FINE ----*/
 
 /*---- SECTION DOUBLE CONTENT ----*/
@@ -310,6 +322,7 @@ a#alink2:hover {
   background-color: rgba(102, 51, 153, 0);
   width: 61%;
 }
+
 .academy-item {
   background-color: #ffffff;
   display: flex;
@@ -319,6 +332,7 @@ a#alink2:hover {
   padding: var(--paddingunidiv);
   height: var(--unidivheight);
 }
+
 .academy-content {
   display: flex;
   align-items: center;
@@ -329,6 +343,7 @@ a#alink2:hover {
   margin: 2px;
   box-shadow: 0px 0px 0.5px 0.5px #dcdbdb;
 }
+
 .academy-description {
   display: flex;
   justify-content: flex-start;
@@ -338,6 +353,7 @@ a#alink2:hover {
   width: 100%;
   padding: 10px;
 }
+
 div.academy-container span,
 .academy-link {
   font-family: 'Montserrat', sans-serif;
@@ -371,6 +387,7 @@ div.academy-container span {
   width: auto;
   height: 100%;
 }
+
 /*---- SECTION DOUBLE CONTENT FINE ----*/
 
 /*---- MULTI NEWS SECTION ----*/
@@ -646,6 +663,7 @@ div.academy-container span {
 .icon-item img {
   width: 100%;
 }
+
 /*---- FOOTER FINE ----*/
 
 /*--------MEDIA QUERY--------*/
