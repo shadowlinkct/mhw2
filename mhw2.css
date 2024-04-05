@@ -1,4 +1,3 @@
-
 :root {
   --articlecontainerdimensionheight: 65.5vh;
   --articlecontainerdimensionheightlapt: 40vw;
@@ -432,8 +431,6 @@ div.academy-container span {
   height: auto;
   width: 100%;
   justify-content: center;
-  position: relative;
-  bottom: 4%;
 }
 
 .imagelargetab img {
@@ -470,19 +467,18 @@ div.academy-container span {
   font-size: 1.1em;
   line-height: 1.7;
 }
-.heart-container {
+
+.bookmark-container {
   display: flex;
   background-color: #c32d3200;
-  align-items: flex-end;
   justify-content: flex-end;
-  position: relative;
-  bottom:4%;
 }
 
-.heart {
-  width: 30px;
+div.bookmark-container img {
+  width: 20px;
   height: auto;
 }
+
 /*-------MEDIUMITEM-------*/
 .mediumtabcontainer {
   flex: 1;
