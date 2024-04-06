@@ -1,6 +1,9 @@
 
 const RIGHT_ARROW = 'img/forward-arrow.png';
 const DOWN_ARROW = 'img/down-arrow.png';
+const BOOKMARKPINNED = 'img/bookmark.png';
+const BOOKMARKNOTPINNED = 'img/bookmarkno.png';
+const CLOSEIMG = 'img/closeX.png';
 
 
 function toggleTopbar() {
@@ -76,19 +79,52 @@ for (let i = 0; i < toggleItems.length; i++) {
 document.addEventListener("click", clickesterno);
 
 //ICONAPREFERITI
-function changebookmarkImage(bookmark) {
+function changeBookmarkImage(event) {
+    const bookmark = event.target;
     bookmark.classList.toggle('clicked');
     if (bookmark.classList.contains('clicked')) {
-        bookmark.src = 'img/bookmark.png';
+        bookmark.src = BOOKMARKPINNED;
     } else {
-        bookmark.src = 'img/bookmarkno.png';
+        bookmark.src = BOOKMARKNOTPINNED;
     }
 }
 
 for (let i = 1; i <= 14; i++) {
     const bookmark = document.getElementById('bookmark' + i);
-    function handleClick() {
-        changebookmarkImage(this);
-    }
-    bookmark.addEventListener('click', handleClick);
+    bookmark.addEventListener('click', changeBookmarkImage);
 }
+
+// ATTRIBUTI DATA
+function creaDataDiv() {
+    // Verifica se esiste già un div con className 'infoDiv'
+    let existingDiv = document.querySelector('.infoDiv');
+    if (existingDiv) {
+        return; // Se esiste, interrompe l'esecuzione della funzione
+    }
+    let dataAttributes = this.dataset;
+    let infoDiv = document.createElement('div');
+    let imgDiv = document.createElement('div');
+    let img = document.createElement('img');
+    infoDiv.className = 'infoDiv';
+    imgDiv.className = 'imgDiv';
+    img.src = CLOSEIMG;
+    img.className = 'closeButton';
+    infoDiv.appendChild(imgDiv);
+    imgDiv.appendChild(img);
+
+    function rimuoviDiv() {
+        // Otteniamo l'elemento genitore del div
+        var parentElement = infoDiv.parentNode;
+        // Rimuoviamo il div dal suo genitore
+        parentElement.removeChild(infoDiv);
+    }
+    img.addEventListener('click', rimuoviDiv);
+    for (let key in dataAttributes) {
+        let p = document.createElement('p');
+        p.textContent = key + ': ' + dataAttributes[key];
+        infoDiv.appendChild(p);
+    }
+    document.body.appendChild(infoDiv);
+}
+const div = document.getElementById('alink2');
+div.addEventListener('click', creaDataDiv);

@@ -1,7 +1,7 @@
 :root {
   --articlecontainerdimensionheight: 65.5vh;
   --articlecontainerdimensionheightlapt: 40vw;
-  --unidivheight: 17vh;
+  --unidivheight: 9.2vw;
   --paddingunidiv: 10px 0px;
   --logonavheight: 10vh;
 }
@@ -16,6 +16,40 @@ body {
   font-family: Roboto Condensed, sans-serif;
 }
 
+.infoDiv {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  flex-direction: column;
+  width: 20%;
+}
+.infoDiv p{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+}
+.imgDiv{
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(41, 39, 40, 255);
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.closeButton {
+  background-color: #ffd90000;
+  height: auto;
+  width: 7%;
+  cursor: pointer;
+}
+.closeButton:hover {
+  background-color: #615f55;
+}
 /*---- BOTTONE ASSISTENZA ----*/
 .fixed-button {
   font-family: "PT Sans", sans-serif;
@@ -284,6 +318,7 @@ div#h1article p {
   font-weight: bold;
   line-height: 4.5;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a#alink2:hover {
@@ -472,6 +507,7 @@ div.academy-container span {
   display: flex;
   background-color: #c32d3200;
   justify-content: flex-end;
+  flex-direction: row;
 }
 
 div.bookmark-container img {
@@ -632,14 +668,14 @@ div.bookmark-container img {
   justify-content: center;
   flex-direction: column;
   background-color: #c32d3200;
-  margin-top: 10vh;
+  margin-top: 10vw;
   align-items: center;
 }
 
 .footer-container p {
   font-family: "PT Sans", sans-serif;
   color: #5b5d6a;
-  font-size: 15px;
+  font-size: 0.95em;
   line-height: 1.8;
 }
 
