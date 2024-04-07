@@ -40,6 +40,7 @@ body {
   width: 100%;
   height: auto;
   margin: auto;
+  padding: 2%;
 }
 .closeButton {
   background-color: #ffd90000;
@@ -197,19 +198,26 @@ div.centerlink a:hover {
 .dropdown-content {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   background-color: #ffffff;
   width: 30%;
+  white-space: nowrap;
 }
-
 .titledropdown {
   background-color: #c32d3200;
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: calc(50% - 5%);
   font-size: 1em;
-  border-bottom: 1px solid #b4b4b4;
   margin: auto;
+  flex-direction: column;
+}
+.titledropdown h3{
+background-color: #264e4a00;
+display: flex;
+justify-content: center;
+align-items: center;
+border-bottom: 1px solid #b4b4b4;
 }
 
 .dropdown-content p {
