@@ -33,20 +33,39 @@ menubutt.addEventListener('click', toggleTopbar);
 // menubutt.addEventListener('click', topbar);
 
 //CENTERLINKFINESTRE
+let ultimoElementoCliccato = null;
+let ultimoElementoCliccatoIMG= null;
 let isVisible = false;
+
 function toggle(event) {
     const targetId = event.currentTarget.id + "Content";
     const content = document.getElementById(targetId);
+    const targetIdIMG = event.currentTarget.id;
+    const contentimg = document.getElementById(targetIdIMG);
 
-    isVisible = !isVisible;
-    if (isVisible) {
-        content.classList.remove('hidden');
-        event.currentTarget.querySelector('img').src = DOWN_ARROW;
-    } else {
+    // Se c'è un elemento precedentemente cliccato, nascondilo
+    if (ultimoElementoCliccato !== null) {
+        ultimoElementoCliccato.classList.add('hidden');
+        ultimoElementoCliccatoIMG.querySelector('img').src = RIGHT_ARROW;
+    }
+
+    // Se l'elemento corrente è già visibile, nascondilo
+    if (isVisible && ultimoElementoCliccato === content) {
         content.classList.add('hidden');
         event.currentTarget.querySelector('img').src = RIGHT_ARROW;
+        isVisible = false;
+    } else {
+        // Altrimenti, mostra l'elemento corrente
+        content.classList.remove('hidden');
+        event.currentTarget.querySelector('img').src = DOWN_ARROW;
+        isVisible = true;
     }
+
+    // Aggiorna l'ultimo elemento cliccato
+    ultimoElementoCliccato = content;
+    ultimoElementoCliccatoIMG=contentimg;
 }
+
 function clickesterno(event) {
     // Verifica se l'elemento cliccato non è uno dei toggleItems
     let esternocliccato = true;
