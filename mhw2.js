@@ -7,11 +7,11 @@ const CLOSEIMG = 'img/closeX.png';
 
 
 function toggleTopbar() {
-    const activeDiv = document.getElementById('active');
+    const activeDiv = document.querySelector('#active');
     activeDiv.classList.toggle('hidden');
 }
 
-const menubutt = document.getElementById('menu');
+const menubutt = document.querySelector('#menu');
 menubutt.addEventListener('click', toggleTopbar);
 
 //                       EQUIVALENTE 
@@ -39,9 +39,9 @@ let isVisible = false;
 
 function toggle(event) {
     const targetId = event.currentTarget.id + "Content";
-    const content = document.getElementById(targetId);
+    const content = document.querySelector('#' + targetId);
     const targetIdIMG = event.currentTarget.id;
-    const contentimg = document.getElementById(targetIdIMG);
+    const contentimg = document.querySelector('#' + targetIdIMG);
 
     // Se c'è un elemento precedentemente cliccato, nascondilo
     if (ultimoElementoCliccato !== null) {
@@ -72,16 +72,16 @@ function clickesterno(event) {
     for (let i = 0; i < toggleItems.length; i++) {
         if (toggleItems[i].contains(event.target)) {
             esternocliccato = false;
+            console.log("esternocliccato:", esternocliccato);
             break;
         }
-        console.log("esternocliccato:", esternocliccato);
     }
 
     // Se il click è esterno e isVisible è true, nascondi tutti gli elementi
     if (esternocliccato && isVisible) {
         for (let i = 0; i < toggleItems.length; i++) {
             const targetId = toggleItems[i].id + "Content";
-            const content = document.getElementById(targetId);
+            const content = document.querySelector('#' + targetId);
             content.classList.add('hidden');
             toggleItems[i].querySelector('img').src = RIGHT_ARROW;
         }
@@ -109,7 +109,7 @@ function changeBookmarkImage(event) {
 }
 
 for (let i = 1; i <= 14; i++) {
-    const bookmark = document.getElementById('bookmark' + i);
+    const bookmark = document.querySelector('#bookmark' + i);
     bookmark.addEventListener('click', changeBookmarkImage);
 }
 
@@ -145,5 +145,5 @@ function creaDataDiv() {
     }
     document.body.appendChild(infoDiv);
 }
-const div = document.getElementById('alink2');
+const div = document.querySelector('#alink2');
 div.addEventListener('click', creaDataDiv);
