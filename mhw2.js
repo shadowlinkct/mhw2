@@ -147,3 +147,26 @@ function creaDataDiv() {
 }
 const div = document.querySelector('#alink2');
 div.addEventListener('click', creaDataDiv);
+
+function assistenzabtn(){
+    let existingDiv = document.querySelector('.divassist');
+    if (existingDiv) {
+        return;
+    }
+    let dataAttributes = this.dataset;
+    let divassist=document.createElement('div');
+    let imgDiv = document.createElement('div');
+    let assisth1=document.createElement('h1');
+    let img = document.createElement('img');
+    divassist.className='divassist';
+    imgDiv.className = 'DivCloseAssist';
+    img.className = 'closeButtonassist';
+    img.src = CLOSEIMG;
+    document.body.appendChild(divassist);
+    divassist.appendChild(imgDiv);
+    imgDiv.appendChild(assisth1);
+    imgDiv.appendChild(img);
+    assisth1.textContent="Assistenza";
+}
+const assistbtn = document.querySelector('.fixed-button');
+assistbtn.addEventListener('click', assistenzabtn);

@@ -16,6 +16,7 @@ body {
   font-family: Roboto Condensed, sans-serif;
 }
 
+/*DIV DATA*/
 .infoDiv {
   display: flex;
   position: fixed;
@@ -28,12 +29,14 @@ body {
   flex-direction: column;
   width: 20%;
 }
-.infoDiv p{
+
+.infoDiv p {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5%;
 }
-.imgDiv{
+
+.imgDiv {
   display: flex;
   justify-content: flex-end;
   background-color: rgba(41, 39, 40, 255);
@@ -42,15 +45,20 @@ body {
   margin: auto;
   padding: 2%;
 }
+
 .closeButton {
   background-color: #ffd90000;
   height: auto;
   width: 7%;
   cursor: pointer;
 }
+
 .closeButton:hover {
   background-color: #615f55;
 }
+
+/*DIV DATA FINE*/
+
 /*---- BOTTONE ASSISTENZA ----*/
 .fixed-button {
   font-family: "PT Sans", sans-serif;
@@ -65,6 +73,7 @@ body {
   bottom: 2.5vw;
   font-size: 1.1em;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .fixed-button p {
@@ -73,6 +82,39 @@ body {
   padding: 0px 7px;
   margin: 5px;
 }
+.divassist {
+  display: flex;
+  flex-direction: column; /* Aggiunto per allineare i figli verticalmente */
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 12px;
+  position: fixed;
+  right: 5vw;
+  bottom: 0;
+  cursor: pointer;
+  width: 40vh;
+  height: 59vh;
+  box-shadow: 0px 0px 7px 3px #7c7c7c;
+}
+
+.DivCloseAssist{
+  background-color: #264E4A;
+  display: flex;
+  justify-content: flex-end; /* Modificato per allineare l'immagine a sinistra */
+  width: 100%;
+}
+.DivCloseAssist h1{
+color: black;
+font-family: "PT Sans", sans-serif;
+}
+
+.DivCloseAssist img{
+  background-color: #ff000000;
+  height: auto;
+  width: 3vh;
+}
+
 
 /*---- BOTTONE ASSISTENZA FINE ----*/
 
@@ -203,6 +245,7 @@ div.centerlink a:hover {
   width: 30%;
   white-space: nowrap;
 }
+
 .titledropdown {
   background-color: #c32d3200;
   display: flex;
@@ -212,12 +255,13 @@ div.centerlink a:hover {
   margin: auto;
   flex-direction: column;
 }
-.titledropdown h3{
-background-color: #264e4a00;
-display: flex;
-justify-content: center;
-align-items: center;
-border-bottom: 1px solid #b4b4b4;
+
+.titledropdown h3 {
+  background-color: #264e4a00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #b4b4b4;
 }
 
 .dropdown-content p {
@@ -694,6 +738,7 @@ div.bookmark-container img {
   height: 100%;
   width: 75%;
   padding: 32px 0px;
+  border-top: 1px solid #dddcda;
 }
 
 .flex-icon {
