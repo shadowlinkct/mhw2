@@ -16,49 +16,6 @@ body {
   font-family: Roboto Condensed, sans-serif;
 }
 
-/*DIV DATA*/
-.infoDiv {
-  display: flex;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 10px;
-  flex-direction: column;
-  width: 20%;
-}
-
-.infoDiv p {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 5%;
-}
-
-.imgDiv {
-  display: flex;
-  justify-content: flex-end;
-  background-color: rgba(41, 39, 40, 255);
-  width: 100%;
-  height: auto;
-  margin: auto;
-  padding: 2%;
-}
-
-.closeButton {
-  background-color: #ffd90000;
-  height: auto;
-  width: 7%;
-  cursor: pointer;
-}
-
-.closeButton:hover {
-  background-color: #615f55;
-}
-
-/*DIV DATA FINE*/
-
 /*---- BOTTONE ASSISTENZA ----*/
 .fixed-button {
   font-family: "PT Sans", sans-serif;
@@ -89,7 +46,7 @@ body {
   background-color: #ffffff;
   border-radius: 24px 24px 0 0;
   color: #ffffff;
-  padding: 12px;
+  padding: 16px;
   position: fixed;
   right: 5vw;
   bottom: 0;
@@ -97,15 +54,24 @@ body {
   height: auto;
   min-height: 550px;
   box-shadow: 0px 0px 7px 3px #7c7c7c;
+  animation: slide-up 0.5s ease-out;
 }
 
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .DivCloseAssist {
-  background-color: #264E4A;
+  background-color: #264e4a00;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-top: 5%;
+  padding-top: 4%;
 }
 
 .DivCloseAssist h1 {
@@ -118,12 +84,49 @@ body {
 .DivCloseAssist img {
   background-color: #ff000000;
   height: 50%;
-  width: 5vh;
+  width: 3.5vh;
   cursor: pointer;
 }
 .divassistcontent{
-  background-color: #4e2626;
+  background-color: #4e262600;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
 }
+
+/* Stile per i div interni */
+.assistcontentitem,
+.assistcontentitem2,
+.assistcontentitem3,
+.assistcontentitem4 {
+  width: 100%;
+  padding: 16px;
+  margin-top: 6.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 18px;
+}
+.assistcontentitem,
+.assistcontentitem2{
+  background-color: #264E4A;
+}
+.assistcontentitem3,
+.assistcontentitem4 {
+  background-color: #f0f0f0;
+  color: black;
+}
+/* Stile per i tag h3 */
+.divassistcontent h3.myH3Class {
+  margin-bottom: 7%;
+  font-family: "PT Sans", sans-serif;
+}
+/* Stile per i tag p */
+.divassistcontent p.myPClass {
+  font-family: "PT Sans", sans-serif;
+}
+
 
 /*---- BOTTONE ASSISTENZA FINE ----*/
 
@@ -403,6 +406,49 @@ a#alink2:hover {
   height: auto;
   width: 100%;
 }
+
+/*DIV DATA*/
+.infoDiv {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  flex-direction: column;
+  width: 20%;
+}
+
+.infoDiv p {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+}
+
+.imgDiv {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(41, 39, 40, 255);
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 2%;
+}
+
+.closeButton {
+  background-color: #ffd90000;
+  height: auto;
+  width: 7%;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background-color: #615f55;
+}
+
+/*DIV DATA FINE*/
 
 /*---- ARTICLE FINE ----*/
 
@@ -1067,6 +1113,25 @@ div.bookmark-container img {
     width: 100%;
     height: auto;
   }
+  .divassist {
+    background-color: white;
+    width: calc(100% - 10px); /* Larghezza completa meno il padding */
+    height: 85vh; /* 70% dell'altezza dello schermo */
+    right: 0; /* Centra il div orizzontalmente */
+    left: 0; /* Centra il div orizzontalmente */
+    margin: auto; /* Centra il div orizzontalmente */
+    padding: 16px 20px; /* Aggiungi padding a destra e a sinistra */
+    z-index: 10000;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
 }
 
 /*----(telefoni, 600px e meno) ----*/

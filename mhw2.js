@@ -1,5 +1,6 @@
 
 
+
 const RIGHT_ARROW = 'img/forward-arrow.png';
 const DOWN_ARROW = 'img/down-arrow.png';
 const BOOKMARKPINNED = 'img/bookmark.png';
@@ -158,6 +159,9 @@ function assistenzabtn() {
     if (existingDiv('.divassist')) {
         return;
     }
+    if (existingDiv('.divassist')) {
+        return;
+    }
     let dataAttributes = this.dataset;
     let divassist = document.createElement('div');
     divassist.className = 'divassist';
@@ -173,19 +177,54 @@ function assistenzabtn() {
     imgDiv.appendChild(assisth1);
     imgDiv.appendChild(img);
     divassist.appendChild(divassistcontent);
-    
-    let classNames = ['assistcontentitem', 'assistcontentitem', 'assistcontentitem', 'assistcontentitem'];
+
+    let classNames = ['assistcontentitem', 'assistcontentitem2', 'assistcontentitem3', 'assistcontentitem4'];
+    let titles = ['Chiamata con tutor', 'WhatsApp', 'Spedizioni, ordini, resi', 'Alimentazione e palestra'];
+    let texts = ['Lun-Ven: 10.00-13.00', 'Lun-Ven: 15.00-18.00 ', 'Invia una mail', 'DM Instagram'];
+    let images = ['img/phone.svg', 'img/whatsapp.svg', 'img/mail.svg', 'img/instagram.svg'];
+    let h3Class = 'myH3Class';
+    let pClass = 'myPClass';
+    let imgClass = 'myImgClass';
+
     for (let i = 0; i < classNames.length; i++) {
         let element = document.createElement('div');
         element.className = classNames[i];
+
+        let contentDiv = document.createElement('div');
+
+        // Crea un tag h3, aggiungi la classe e aggiungilo al contentDiv
+        let h3 = document.createElement('h3');
+        h3.textContent = titles[i];
+        h3.className = h3Class;
+        contentDiv.appendChild(h3);
+
+        // Crea un tag p, aggiungi la classe e aggiungilo al contentDiv
+        let p = document.createElement('p');
+        p.textContent = texts[i];
+        p.className = pClass;
+        contentDiv.appendChild(p);
+
+        element.appendChild(contentDiv);
+
+        // Crea un'immagine, impostala allineata a destra, aggiungi la classe e aggiungila all'elemento
+        let img = document.createElement('img');
+        img.src = images[i];
+        img.className = imgClass;
+        element.appendChild(img);
+
         divassistcontent.appendChild(element);
     }
     assisth1.textContent = "Assistenza";
     function rimuoviDiv() {
         var parentElement = divassist.parentNode;
         parentElement.removeChild(divassist);
+        // Rimuovi l'oscuramento
+        document.body.removeChild(overlay);
     }
     img.addEventListener('click', rimuoviDiv);
+    let overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    document.body.appendChild(overlay);
 }
 const assistbtn = document.querySelector('.fixed-button');
 assistbtn.addEventListener('click', assistenzabtn);
