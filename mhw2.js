@@ -1,11 +1,18 @@
 
+
 const RIGHT_ARROW = 'img/forward-arrow.png';
 const DOWN_ARROW = 'img/down-arrow.png';
 const BOOKMARKPINNED = 'img/bookmark.png';
 const BOOKMARKNOTPINNED = 'img/bookmarkno.png';
 const CLOSEIMG = 'img/closeX.png';
 
-
+function existingDiv(selector) {
+    let existingDiv = document.querySelector(selector);
+    if (existingDiv) {
+        return true;
+    }
+    return false;
+}
 function toggleTopbar() {
     const activeDiv = document.querySelector('#active');
     activeDiv.classList.toggle('hidden');
@@ -34,7 +41,7 @@ menubutt.addEventListener('click', toggleTopbar);
 
 //CENTERLINKFINESTRE
 let ultimoElementoCliccato = null;
-let ultimoElementoCliccatoIMG= null;
+let ultimoElementoCliccatoIMG = null;
 let isVisible = false;
 
 function toggle(event) {
@@ -63,7 +70,7 @@ function toggle(event) {
 
     // Aggiorna l'ultimo elemento cliccato
     ultimoElementoCliccato = content;
-    ultimoElementoCliccatoIMG=contentimg;
+    ultimoElementoCliccatoIMG = contentimg;
 }
 
 function clickesterno(event) {
@@ -116,9 +123,8 @@ for (let i = 1; i <= 14; i++) {
 // ATTRIBUTI DATA
 function creaDataDiv() {
     // Verifica se esiste già un div con className 'infoDiv'
-    let existingDiv = document.querySelector('.infoDiv');
-    if (existingDiv) {
-        return; // Se esiste, interrompe l'esecuzione della funzione
+    if (existingDiv('.infoDiv')) {
+        return;
     }
     let dataAttributes = this.dataset;
     let infoDiv = document.createElement('div');
@@ -148,25 +154,42 @@ function creaDataDiv() {
 const div = document.querySelector('#alink2');
 div.addEventListener('click', creaDataDiv);
 
-function assistenzabtn(){
-    let existingDiv = document.querySelector('.divassist');
-    if (existingDiv) {
+function assistenzabtn() {
+    if (existingDiv('.divassist')) {
         return;
     }
     let dataAttributes = this.dataset;
-    let divassist=document.createElement('div');
+    let divassist = document.createElement('div');
+    divassist.className = 'divassist';
+    let divassistcontent = document.createElement('div');
+    divassistcontent.className = 'divassistcontent';
+    //DA OTTIMIZZARE
+    let assistcontentitem1 = document.createElement('div');
+    assistcontentitem1.className = 'assistcontentitem1';
+    let assistcontentitem2 = document.createElement('div');
+    assistcontentitem2.className = 'assistcontentitem2';
+    let assistcontentitem3 = document.createElement('div');
+    assistcontentitem3.className = 'assistcontentitem3';
+    let assistcontentitem4 = document.createElement('div');
+    assistcontentitem4.className = 'assistcontentitem4';
+
     let imgDiv = document.createElement('div');
-    let assisth1=document.createElement('h1');
-    let img = document.createElement('img');
-    divassist.className='divassist';
     imgDiv.className = 'DivCloseAssist';
-    img.className = 'closeButtonassist';
+    let assisth1 = document.createElement('h1');
+    let img = document.createElement('img');
     img.src = CLOSEIMG;
     document.body.appendChild(divassist);
     divassist.appendChild(imgDiv);
     imgDiv.appendChild(assisth1);
     imgDiv.appendChild(img);
-    assisth1.textContent="Assistenza";
+    divassist.appendChild(divassistcontent);
+    divassistcontent.appendChild(assistcontentitem1);
+    assisth1.textContent = "Assistenza";
+    function rimuoviDiv() {
+        var parentElement = divassist.parentNode;
+        parentElement.removeChild(divassist);
+    }
+    img.addEventListener('click', rimuoviDiv);
 }
 const assistbtn = document.querySelector('.fixed-button');
 assistbtn.addEventListener('click', assistenzabtn);
