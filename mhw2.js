@@ -163,16 +163,6 @@ function assistenzabtn() {
     divassist.className = 'divassist';
     let divassistcontent = document.createElement('div');
     divassistcontent.className = 'divassistcontent';
-    //DA OTTIMIZZARE
-    let assistcontentitem1 = document.createElement('div');
-    assistcontentitem1.className = 'assistcontentitem1';
-    let assistcontentitem2 = document.createElement('div');
-    assistcontentitem2.className = 'assistcontentitem2';
-    let assistcontentitem3 = document.createElement('div');
-    assistcontentitem3.className = 'assistcontentitem3';
-    let assistcontentitem4 = document.createElement('div');
-    assistcontentitem4.className = 'assistcontentitem4';
-
     let imgDiv = document.createElement('div');
     imgDiv.className = 'DivCloseAssist';
     let assisth1 = document.createElement('h1');
@@ -183,7 +173,13 @@ function assistenzabtn() {
     imgDiv.appendChild(assisth1);
     imgDiv.appendChild(img);
     divassist.appendChild(divassistcontent);
-    divassistcontent.appendChild(assistcontentitem1);
+    
+    let classNames = ['assistcontentitem', 'assistcontentitem', 'assistcontentitem', 'assistcontentitem'];
+    for (let i = 0; i < classNames.length; i++) {
+        let element = document.createElement('div');
+        element.className = classNames[i];
+        divassistcontent.appendChild(element);
+    }
     assisth1.textContent = "Assistenza";
     function rimuoviDiv() {
         var parentElement = divassist.parentNode;
