@@ -1,9 +1,11 @@
+// Definizione delle costanti per le immagini
 const RIGHT_ARROW = 'img/forward-arrow.png';
 const DOWN_ARROW = 'img/down-arrow.png';
 const BOOKMARKPINNED = 'img/bookmark.png';
 const BOOKMARKNOTPINNED = 'img/bookmarkno.png';
 const CLOSEIMG = 'img/closeX.png';
 
+// Funzione per verificare l'esistenza di un div
 function existingDiv(selector) {
     let existingDiv = document.querySelector(selector);
     if (existingDiv) {
@@ -11,37 +13,23 @@ function existingDiv(selector) {
     }
     return false;
 }
+
+// Funzione per mostrare/nascondere la barra superiore
 function toggleTopbar() {
     const activeDiv = document.querySelector('#active');
     activeDiv.classList.toggle('hidden');
 }
 
+// Aggiunta dell'evento click al pulsante del menu
 const menubutt = document.querySelector('#menu');
 menubutt.addEventListener('click', toggleTopbar);
 
-//                       EQUIVALENTE 
-// function topbar() {
-//   const activeDiv = document.getElementById('active');
-//   activeDiv.classList.remove('hidden');
-//   menubutt.removeEventListener('click', topbar);
-//   menubutt.addEventListener('click', topbarclose);
-// }
-
-// function topbarclose() {
-//   const activeDiv = document.getElementById('active');
-//   activeDiv.classList.add('hidden');
-//   menubutt.removeEventListener('click', topbarclose);
-//   menubutt.addEventListener('click', topbar);
-// }
-
-// const menubutt = document.getElementById('menu');
-// menubutt.addEventListener('click', topbar);
-
-//CENTERLINKFINESTRE
+// Gestione dei link al centro della finestra
 let ultimoElementoCliccato = null;
 let ultimoElementoCliccatoIMG = null;
 let isVisible = false;
 
+// Funzione per mostrare/nascondere gli elementi al click
 function toggle(event) {
     const targetId = event.currentTarget.id + "Content";
     const content = document.querySelector('#' + targetId);
@@ -71,6 +59,7 @@ function toggle(event) {
     ultimoElementoCliccatoIMG = contentimg;
 }
 
+// Funzione per gestire i click esterni
 function clickesterno(event) {
     // Verifica se l'elemento cliccato non è uno dei toggleItems
     let esternocliccato = true;
@@ -95,14 +84,16 @@ function clickesterno(event) {
     }
 }
 
+// Aggiunta dell'evento click a tutti gli elementi toggle
 const toggleItems = document.querySelectorAll('.centerlink-item');
-
 for (let i = 0; i < toggleItems.length; i++) {
     toggleItems[i].addEventListener('click', toggle);
 }
+
+// Aggiunta dell'evento click al documento per gestire i click esterni
 document.addEventListener("click", clickesterno);
 
-//ICONAPREFERITI
+// Gestione dell'icona dei preferiti
 function changeBookmarkImage(event) {
     const bookmark = event.target;
     bookmark.classList.toggle('clicked');
@@ -113,12 +104,13 @@ function changeBookmarkImage(event) {
     }
 }
 
+// Aggiunta dell'evento click a tutte le icone dei preferiti
 for (let i = 1; i <= 14; i++) {
     const bookmark = document.querySelector('#bookmark' + i);
     bookmark.addEventListener('click', changeBookmarkImage);
 }
 
-// ATTRIBUTI DATA
+// Creazione del div per visualizzare i dati
 function creaDataDiv() {
     // Verifica se esiste già un div con className 'infoDiv'
     if (existingDiv('.infoDiv')) {
@@ -127,35 +119,50 @@ function creaDataDiv() {
     let dataAttributes = this.dataset;
     let infoDiv = document.createElement('div');
     let imgDiv = document.createElement('div');
+    imgDiv.className = 'imgDiv';
     let img = document.createElement('img');
     infoDiv.className = 'infoDiv';
-    imgDiv.className = 'imgDiv';
+    let assisth1 = document.createElement('h3');
     img.src = CLOSEIMG;
     img.className = 'closeButton';
     infoDiv.appendChild(imgDiv);
+    imgDiv.appendChild(assisth1);
     imgDiv.appendChild(img);
+    assisth1.textContent = "Scheda Tecnica";
 
+    // Funzione per rimuovere il div
     function rimuoviDiv() {
         // Otteniamo l'elemento genitore del div
         let parentElement = infoDiv.parentNode;
         // Rimuoviamo il div dal suo genitore
         parentElement.removeChild(infoDiv);
+        document.body.removeChild(overlay);
     }
     img.addEventListener('click', rimuoviDiv);
+
+    // Creazione dei paragrafi per ogni attributo data
     for (let key in dataAttributes) {
         let p = document.createElement('p');
         p.textContent = key + ': ' + dataAttributes[key];
         infoDiv.appendChild(p);
     }
-    document.body.appendChild(infoDiv);
-}
-const div = document.querySelector('#alink2');
-div.addEventListener('click', creaDataDiv);
 
+    // Aggiunta del div e dell'overlay al body
+    document.body.appendChild(infoDiv);
+    let overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    document.body.appendChild(overlay);
+}
+
+// Aggiunta dell'evento click a tutte le colonne
+const columns = document.querySelectorAll('.column');
+for (let i = 0; i < columns.length; i++) {
+    columns[i].addEventListener('click', creaDataDiv);
+}
+
+// Funzione per gestire il pulsante di assistenza
 function assistenzabtn() {
-    if (existingDiv('.divassist')) {
-        return;
-    }
+    // Verifica se esiste già un div con className 'divassist'
     if (existingDiv('.divassist')) {
         return;
     }
@@ -175,6 +182,7 @@ function assistenzabtn() {
     imgDiv.appendChild(img);
     divassist.appendChild(divassistcontent);
 
+    // Creazione dei contenuti dell'assistenza
     let classNames = ['assistcontentitem', 'assistcontentitem2', 'assistcontentitem3', 'assistcontentitem4'];
     let titles = ['Chiamata con tutor', 'WhatsApp', 'Spedizioni, ordini, resi', 'Alimentazione e palestra'];
     let texts = ['Lun-Ven: 10.00-13.00', 'Lun-Ven: 15.00-18.00 ', 'Invia una mail', 'DM Instagram'];
@@ -212,6 +220,8 @@ function assistenzabtn() {
         divassistcontent.appendChild(element);
     }
     assisth1.textContent = "Assistenza";
+
+    // Funzione per rimuovere il div
     function rimuoviDiv() {
         let parentElement = divassist.parentNode;
         parentElement.removeChild(divassist);
@@ -219,13 +229,18 @@ function assistenzabtn() {
         document.body.removeChild(overlay);
     }
     img.addEventListener('click', rimuoviDiv);
+
+    // Creazione dell'overlay
     let overlay = document.createElement('div');
     overlay.classList.add('overlay');
     document.body.appendChild(overlay);
 }
+
+// Aggiunta dell'evento click al pulsante di assistenza
 const assistbtn = document.querySelector('.fixed-button');
 assistbtn.addEventListener('click', assistenzabtn);
 
+// Gestione delle slide
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -237,6 +252,7 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
+// Funzione per mostrare le slide
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
@@ -253,6 +269,7 @@ function showSlides(n) {
     dots[slideIndex - 1].classList.add("actives");
 }
 
+// Aggiunta dell'evento click ai punti delle slide
 for (let i = 1; i <= 3; i++) {
     let slideNumber = i <= 3 ? i : i - 3;
 
@@ -262,6 +279,7 @@ for (let i = 1; i <= 3; i++) {
     document.getElementById("dot" + i).addEventListener("click", callbackFunction);
 }
 
+// Funzioni per passare alla slide precedente o successiva
 function prevSlide() {
     plusSlides(-1);
 }
@@ -272,3 +290,12 @@ function nextSlide() {
 document.querySelector('.prev').addEventListener('click', prevSlide);
 document.querySelector('.next').addEventListener('click', nextSlide);
 
+function scrollToOtherDiv() {
+    // Ottieni l'elemento da mostrare
+    var otherDiv = document.querySelector('.slideshow-div');
+
+    // Scorri fino all'elemento
+    otherDiv.scrollIntoView();
+}
+
+document.querySelector('#alink2').addEventListener('click', scrollToOtherDiv);
