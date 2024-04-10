@@ -854,11 +854,11 @@ margin-bottom: 3vh;
 }
 
 .prev {
-  left: -50px; /* Sposta il pulsante a sinistra */
+  left: -50px;
 }
 
 .next {
-  right: -50px; /* Sposta il pulsante a destra */
+  right: -50px;
 }
 
 
@@ -877,15 +877,11 @@ margin-bottom: 3vh;
 .dot:hover {
   background-color: #c90404;
 }
-
-/* Three image containers (use 25% for four, and 50% for two, 33.33%; for three etc) */
 .column {
   float: left;
   width: 25%;
   padding: 5px;
 }
-
-/* Clear floats after image containers */
 .row::after {
   content: "";
   clear: both;
@@ -1087,13 +1083,9 @@ margin-bottom: 3vh;
   #active div {
     display: block;
     border-top: 1px solid #b4b4b4;
-    /*---- Aggiunge un bordo superiore di 2 pixel di spessore, nero ----*/
     border-bottom: 1px solid #b4b4b4;
-    /*---- Aggiunge un bordo inferiore di 2 pixel di spessore, nero ----*/
     padding: 20px 25px;
-    /*---- Opzionale: aggiunge un padding per separare il testo dal bordo ----*/
     text-decoration: none;
-    /*---- Rimuove la sottolineatura predefinita ----*/
   }
 
   #iconmenu {
@@ -1119,7 +1111,7 @@ margin-bottom: 3vh;
   }
 }
 
-/*----(landscape tablets, 992px e meno) ----*/
+/*----(tablets, 992px e meno) ----*/
 @media only screen and (max-width: 992px) {
   .infoDiv{
     width:  50%;
@@ -1174,7 +1166,7 @@ margin-bottom: 3vh;
   }
 }
 
-/*----(portrait tablets e telefoni di grandi dimensioni, 768px e meno) ----*/
+/*----(tablets e telefoni di grandi dimensioni, 768px e meno) ----*/
 @media only screen and (max-width: 768px) {
   .infoDiv{
     width:  100%;
@@ -1287,7 +1279,6 @@ margin-bottom: 3vh;
     left: 0;
     margin: auto;
     padding: 16px 20px;
-    /* Aggiungi padding a destra e a sinistra */
     z-index: 10000;
   }
 
