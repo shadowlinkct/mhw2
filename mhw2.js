@@ -61,8 +61,12 @@ function toggle(event) {
     ultimoElementoCliccato = content;
     ultimoElementoCliccatoIMG = contentimg;
 }
-
-// Funzione per gestire i click esterni
+// Aggiunta dell'evento click a tutti gli elementi toggle
+const toggleItems = document.querySelectorAll('.centerlink-item');
+for (let i = 0; i < toggleItems.length; i++) {
+    toggleItems[i].addEventListener('click', toggle);
+}
+// FUNZIONE PER IL CLICK ESTERNO CENTERLINK
 function clickesterno(event) {
     // Verifica se l'elemento cliccato non è uno dei toggleItems
     let esternocliccato = true;
@@ -86,15 +90,8 @@ function clickesterno(event) {
         console.log("isVisible:", isVisible);
     }
 }
-
-// Aggiunta dell'evento click a tutti gli elementi toggle
-const toggleItems = document.querySelectorAll('.centerlink-item');
-for (let i = 0; i < toggleItems.length; i++) {
-    toggleItems[i].addEventListener('click', toggle);
-}
-
-// Aggiunta dell'evento click al documento per gestire i click esterni
 document.addEventListener("click", clickesterno);
+// FUNZIONE PER IL CLICK ESTERNO CENTERLINK FINE
 //GESTIONE DEI LINK AL CENTRO DELLA FINESTRA FINE
 
 // GESTIONE DELL'ICONA DEI PREFERITI
@@ -164,6 +161,7 @@ const columns = document.querySelectorAll('.column');
 for (let i = 0; i < columns.length; i++) {
     columns[i].addEventListener('click', creaDataDiv);
 }
+//FUNZIONE PER CHIUDERE I DIV DATA AL TOCCO ESTERNO
 function clickesternodata(event) {
     let esternocliccatos = true;
     let infoDivs = document.querySelector('.infoDiv');
@@ -186,6 +184,7 @@ function clickesternodata(event) {
     }
 }
 document.addEventListener("click", clickesternodata);
+//FUNZIONE PER CHIUDERE I DIV DATA AL TOCCO ESTERNO FINE
 // CREAZIONE DEL DIV PER VISUALIZZARE I DATI FINE
 
 // FUNZIONE PER GESTIRE IL PULSANTE DI ASSISTENZA
@@ -299,11 +298,16 @@ function showSlides(n) {
 // Aggiunta dell'evento click ai punti delle slide
 for (let i = 1; i <= 3; i++) {
     let slideNumber = i <= 3 ? i : i - 3;
-
     function callbackFunction() {
         currentSlide(slideNumber);
     }
     document.querySelector("#dot" + i).addEventListener("click", callbackFunction);
+        /**let slideNumber: Int
+if i <= 3 {
+    slideNumber = i
+} else {
+    slideNumber = i - 3
+} */
 }
 
 // Funzioni per passare alla slide precedente o successiva
@@ -319,7 +323,7 @@ document.querySelector('.next').addEventListener('click', nextSlide);
 
 function scrollToOtherDiv() {
     // Ottieni l'elemento da mostrare
-    var otherDiv = document.querySelector('.slideshow-div');
+    let otherDiv = document.querySelector('.slideshow-div');
 
     // Scorri fino all'elemento
     otherDiv.scrollIntoView();

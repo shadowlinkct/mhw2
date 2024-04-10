@@ -450,13 +450,6 @@ a#alink2:hover {
   font-family: "PT Sans", sans-serif;
 }
 
-.DivCloseAssist img {
-  background-color: #ff000000;
-  height: 50%;
-  width: 3.5vh;
-  cursor: pointer;
-}
-
 .closeButton {
   background-color: #ffd90000;
   height: auto;
@@ -1128,28 +1121,11 @@ margin-bottom: 3vh;
 
 /*----(landscape tablets, 992px e meno) ----*/
 @media only screen and (max-width: 992px) {
-  .footer-text {
-    flex-direction: column;
-  }
-
-  .flex-icon {
-    margin-top: 3vw;
-    margin-left: 0;
-  }
-
-  .icon-item {
-    width: 5.5vh;
-    height: auto;
-  }
-}
-
-/*----(portrait tablets e telefoni di grandi dimensioni, 768px e meno) ----*/
-@media only screen and (max-width: 768px) {
   .infoDiv{
-    width:  100%;
+    width:  50%;
     z-index: 10000;
   }
-    /*CAROSELLO*/
+  /*CAROSELLO*/
   .slideshow-div{
     flex-direction: column;
     padding: 10px;
@@ -1183,6 +1159,26 @@ margin-bottom: 3vh;
     display: none;
   }
   /*CAROSELLO FINE*/
+  .footer-text {
+    flex-direction: column;
+  }
+
+  .flex-icon {
+    margin-top: 3vw;
+    margin-left: 0;
+  }
+
+  .icon-item {
+    width: 5.5vh;
+    height: auto;
+  }
+}
+
+/*----(portrait tablets e telefoni di grandi dimensioni, 768px e meno) ----*/
+@media only screen and (max-width: 768px) {
+  .infoDiv{
+    width:  100%;
+  }
   .fixed-button a {
     display: none;
   }
