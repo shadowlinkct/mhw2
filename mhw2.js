@@ -137,7 +137,7 @@ function creaDataDiv() {
 
     function rimuoviDiv() {
         // Otteniamo l'elemento genitore del div
-        var parentElement = infoDiv.parentNode;
+        let parentElement = infoDiv.parentNode;
         // Rimuoviamo il div dal suo genitore
         parentElement.removeChild(infoDiv);
     }
@@ -213,7 +213,7 @@ function assistenzabtn() {
     }
     assisth1.textContent = "Assistenza";
     function rimuoviDiv() {
-        var parentElement = divassist.parentNode;
+        let parentElement = divassist.parentNode;
         parentElement.removeChild(divassist);
         // Rimuovi l'oscuramento
         document.body.removeChild(overlay);
@@ -226,30 +226,49 @@ function assistenzabtn() {
 const assistbtn = document.querySelector('.fixed-button');
 assistbtn.addEventListener('click', assistenzabtn);
 
-var slideIndex = 1;
+let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
-      slides[i].classList.remove("activeSlide");  
+        slides[i].classList.remove("activeSlide");
     }
     for (i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("actives");
+        dots[i].classList.remove("actives");
     }
-    slides[slideIndex-1].classList.add("activeSlide");  
-    dots[slideIndex-1].classList.add("actives");
-  }
-  
+    slides[slideIndex - 1].classList.add("activeSlide");
+    dots[slideIndex - 1].classList.add("actives");
+}
+
+for (let i = 1; i <= 3; i++) {
+    let slideNumber = i <= 3 ? i : i - 3;
+
+    function callbackFunction() {
+        currentSlide(slideNumber);
+    }
+    document.getElementById("dot" + i).addEventListener("click", callbackFunction);
+}
+
+function prevSlide() {
+    plusSlides(-1);
+}
+
+function nextSlide() {
+    plusSlides(1);
+}
+document.querySelector('.prev').addEventListener('click', prevSlide);
+document.querySelector('.next').addEventListener('click', nextSlide);
+
