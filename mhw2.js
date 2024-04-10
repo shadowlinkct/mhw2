@@ -1,11 +1,12 @@
-// Definizione delle costanti per le immagini
+// DEFINIZIONE DELLE COSTANTI PER LE IMMAGINI
 const RIGHT_ARROW = 'img/forward-arrow.png';
 const DOWN_ARROW = 'img/down-arrow.png';
 const BOOKMARKPINNED = 'img/bookmark.png';
 const BOOKMARKNOTPINNED = 'img/bookmarkno.png';
 const CLOSEIMG = 'img/closeX.png';
+// DEFINIZIONE DELLE COSTANTI PER LE IMMAGINI FINE
 
-// Funzione per verificare l'esistenza di un div
+// FUNZIONE PER VERIFICARE L'ESISTENZA DI UN DIV
 function existingDiv(selector) {
     let existingDiv = document.querySelector(selector);
     if (existingDiv) {
@@ -13,8 +14,9 @@ function existingDiv(selector) {
     }
     return false;
 }
+// FUNZIONE PER VERIFICARE L'ESISTENZA DI UN DIV
 
-// Funzione per mostrare/nascondere la barra superiore
+// FUNZIONE PER MOSTRARE/NASCONDERE LA BARRA SUPERIORE
 function toggleTopbar() {
     const activeDiv = document.querySelector('#active');
     activeDiv.classList.toggle('hidden');
@@ -23,8 +25,9 @@ function toggleTopbar() {
 // Aggiunta dell'evento click al pulsante del menu
 const menubutt = document.querySelector('#menu');
 menubutt.addEventListener('click', toggleTopbar);
+// FUNZIONE PER MOSTRARE/NASCONDERE LA BARRA SUPERIORE FINE
 
-// Gestione dei link al centro della finestra
+// GESTIONE DEI LINK AL CENTRO DELLA FINESTRA
 let ultimoElementoCliccato = null;
 let ultimoElementoCliccatoIMG = null;
 let isVisible = false;
@@ -92,8 +95,9 @@ for (let i = 0; i < toggleItems.length; i++) {
 
 // Aggiunta dell'evento click al documento per gestire i click esterni
 document.addEventListener("click", clickesterno);
+//GESTIONE DEI LINK AL CENTRO DELLA FINESTRA FINE
 
-// Gestione dell'icona dei preferiti
+// GESTIONE DELL'ICONA DEI PREFERITI
 function changeBookmarkImage(event) {
     const bookmark = event.target;
     bookmark.classList.toggle('clicked');
@@ -109,8 +113,9 @@ for (let i = 1; i <= 14; i++) {
     const bookmark = document.querySelector('#bookmark' + i);
     bookmark.addEventListener('click', changeBookmarkImage);
 }
+// GESTIONE DELL'ICONA DEI PREFERITI FINE
 
-// Creazione del div per visualizzare i dati
+// CREAZIONE DEL DIV PER VISUALIZZARE I DATI
 function creaDataDiv() {
     // Verifica se esiste già un div con className 'infoDiv'
     if (existingDiv('.infoDiv')) {
@@ -159,8 +164,9 @@ const columns = document.querySelectorAll('.column');
 for (let i = 0; i < columns.length; i++) {
     columns[i].addEventListener('click', creaDataDiv);
 }
+// CREAZIONE DEL DIV PER VISUALIZZARE I DATI FINE
 
-// Funzione per gestire il pulsante di assistenza
+// FUNZIONE PER GESTIRE IL PULSANTE DI ASSISTENZA
 function assistenzabtn() {
     // Verifica se esiste già un div con className 'divassist'
     if (existingDiv('.divassist')) {
@@ -239,8 +245,9 @@ function assistenzabtn() {
 // Aggiunta dell'evento click al pulsante di assistenza
 const assistbtn = document.querySelector('.fixed-button');
 assistbtn.addEventListener('click', assistenzabtn);
+//FUNZIONE PER GESTIRE IL PULSANTE DI ASSISTENZA FINE
 
-// Gestione delle slide
+// GESTIONE DELLE SLIDE
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -276,7 +283,7 @@ for (let i = 1; i <= 3; i++) {
     function callbackFunction() {
         currentSlide(slideNumber);
     }
-    document.getElementById("dot" + i).addEventListener("click", callbackFunction);
+    document.querySelector("#dot" + i).addEventListener("click", callbackFunction);
 }
 
 // Funzioni per passare alla slide precedente o successiva
@@ -299,3 +306,4 @@ function scrollToOtherDiv() {
 }
 
 document.querySelector('#alink2').addEventListener('click', scrollToOtherDiv);
+// GESTIONE DELLE SLIDE FINE
