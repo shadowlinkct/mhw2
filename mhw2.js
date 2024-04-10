@@ -14,14 +14,30 @@ function existingDiv(selector) {
     }
     return false;
 }
-// FUNZIONE PER VERIFICARE L'ESISTENZA DI UN DIV
+// FUNZIONE PER VERIFICARE L'ESISTENZA DI UN DIV FINE
 
-// FUNZIONE PER MOSTRARE/NASCONDERE LA BARRA SUPERIORE
+// FUNZIONE PER MOSTRARE/NASCONDERE LA BARRA SUPERIORE (MENU)
 function toggleTopbar() {
     const activeDiv = document.querySelector('#active');
     activeDiv.classList.toggle('hidden');
 }
+//                       EQUIVALENTE 
+// function topbar() {
+//   const activeDiv = document.getElementById('active');
+//   activeDiv.classList.remove('hidden');
+//   menubutt.removeEventListener('click', topbar);
+//   menubutt.addEventListener('click', topbarclose);
+// }
 
+// function topbarclose() {
+//   const activeDiv = document.getElementById('active');
+//   activeDiv.classList.add('hidden');
+//   menubutt.removeEventListener('click', topbarclose);
+//   menubutt.addEventListener('click', topbar);
+// }
+
+// const menubutt = document.getElementById('menu');
+// menubutt.addEventListener('click', topbar);
 // Aggiunta dell'evento click al pulsante del menu
 const menubutt = document.querySelector('#menu');
 menubutt.addEventListener('click', toggleTopbar);
