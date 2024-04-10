@@ -1,3 +1,4 @@
+
 :root {
   --articlecontainerdimensionheight: 65.5vh;
   --articlecontainerdimensionheightlapt: 40vw;
@@ -53,7 +54,7 @@ body {
   width: 380px;
   height: auto;
   min-height: 550px;
-  box-shadow: 0px 0px 7px 3px #7c7c7c;
+  box-shadow: 0px -6px 32px 0px rgba(0, 0, 0, 0.15);
   animation: slide-up 0.5s ease-out;
 }
 
