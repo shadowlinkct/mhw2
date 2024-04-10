@@ -116,7 +116,10 @@ for (let i = 1; i <= 14; i++) {
 // GESTIONE DELL'ICONA DEI PREFERITI FINE
 
 // CREAZIONE DEL DIV PER VISUALIZZARE I DATI
+let isVisibles = false;
 function creaDataDiv() {
+    isVisibles = !isVisibles;
+    console.log('uno', isVisibles);
     // Verifica se esiste già un div con className 'infoDiv'
     if (existingDiv('.infoDiv')) {
         return;
@@ -137,11 +140,10 @@ function creaDataDiv() {
 
     // Funzione per rimuovere il div
     function rimuoviDiv() {
-        // Otteniamo l'elemento genitore del div
-        let parentElement = infoDiv.parentNode;
-        // Rimuoviamo il div dal suo genitore
-        parentElement.removeChild(infoDiv);
-        document.body.removeChild(overlay);
+        infoDiv.remove();
+        overlay.remove();
+        isVisibles = false;
+        console.log(isVisibles);
     }
     img.addEventListener('click', rimuoviDiv);
 
@@ -164,6 +166,28 @@ const columns = document.querySelectorAll('.column');
 for (let i = 0; i < columns.length; i++) {
     columns[i].addEventListener('click', creaDataDiv);
 }
+function clickesternodata(event) {
+    let esternocliccatos = true;
+    let infoDivs = document.querySelector('.infoDiv');
+    let overlays = document.querySelector('.overlay')
+    for (let i = 0; i < columns.length; i++) {
+        if (columns[i].contains(event.target)) {
+            esternocliccatos = false;
+            console.log("esternocliccato:", esternocliccatos);
+            break;
+        }
+    }
+    // Se il click è esterno e isVisible è true, nascondi tutti gli elementi
+    if (esternocliccatos && isVisibles) {
+        for (let i = 0; i < columns.length; i++) {
+            infoDivs.remove();
+            overlays.remove();
+        }
+        isVisibles = false;
+        console.log(isVisibles)
+    }
+}
+document.addEventListener("click", clickesternodata);
 // CREAZIONE DEL DIV PER VISUALIZZARE I DATI FINE
 
 // FUNZIONE PER GESTIRE IL PULSANTE DI ASSISTENZA
@@ -229,10 +253,8 @@ function assistenzabtn() {
 
     // Funzione per rimuovere il div
     function rimuoviDiv() {
-        let parentElement = divassist.parentNode;
-        parentElement.removeChild(divassist);
-        // Rimuovi l'oscuramento
-        document.body.removeChild(overlay);
+        divassist.remove();
+        overlay.remove();
     }
     img.addEventListener('click', rimuoviDiv);
 
