@@ -116,34 +116,32 @@ for (let i = 1; i <= 14; i++) {
 // GESTIONE DELL'ICONA DEI PREFERITI FINE
 
 // CREAZIONE DEL DIV PER VISUALIZZARE I DATI
-let isVisibles = false;
+let isVisibleData = false;
 function creaDataDiv() {
-    isVisibles = !isVisibles;
-    console.log('uno', isVisibles);
+    isVisibleData = !isVisibleData;
     // Verifica se esiste già un div con className 'infoDiv'
     if (existingDiv('.infoDiv')) {
         return;
     }
     let dataAttributes = this.dataset;
     let infoDiv = document.createElement('div');
-    let imgDiv = document.createElement('div');
-    imgDiv.className = 'imgDiv';
+    let dataHeader = document.createElement('div');
+    dataHeader.className = 'imgDiv';
     let img = document.createElement('img');
     infoDiv.className = 'infoDiv';
-    let assisth1 = document.createElement('h3');
+    let datah3 = document.createElement('h3');
     img.src = CLOSEIMG;
     img.className = 'closeButton';
-    infoDiv.appendChild(imgDiv);
-    imgDiv.appendChild(assisth1);
-    imgDiv.appendChild(img);
-    assisth1.textContent = "Scheda Tecnica";
+    infoDiv.appendChild(dataHeader);
+    dataHeader.appendChild(datah3);
+    dataHeader.appendChild(img);
+    datah3.textContent = "Scheda Tecnica";
 
     // Funzione per rimuovere il div
     function rimuoviDiv() {
         infoDiv.remove();
         overlay.remove();
-        isVisibles = false;
-        console.log(isVisibles);
+        isVisibleData = false;
     }
     img.addEventListener('click', rimuoviDiv);
 
@@ -178,13 +176,13 @@ function clickesternodata(event) {
         }
     }
     // Se il click è esterno e isVisible è true, nascondi tutti gli elementi
-    if (esternocliccatos && isVisibles) {
+    if (esternocliccatos && isVisibleData) {
         for (let i = 0; i < columns.length; i++) {
             infoDivs.remove();
             overlays.remove();
         }
-        isVisibles = false;
-        console.log(isVisibles)
+        isVisibleData = false;
+        console.log(isVisibleData)
     }
 }
 document.addEventListener("click", clickesternodata);
@@ -201,15 +199,15 @@ function assistenzabtn() {
     divassist.className = 'divassist';
     let divassistcontent = document.createElement('div');
     divassistcontent.className = 'divassistcontent';
-    let imgDiv = document.createElement('div');
-    imgDiv.className = 'DivCloseAssist';
+    let assistHeader = document.createElement('div');
+    assistHeader.className = 'DivCloseAssist';
     let assisth1 = document.createElement('h1');
     let img = document.createElement('img');
     img.src = CLOSEIMG;
     document.body.appendChild(divassist);
-    divassist.appendChild(imgDiv);
-    imgDiv.appendChild(assisth1);
-    imgDiv.appendChild(img);
+    divassist.appendChild(assistHeader);
+    assistHeader.appendChild(assisth1);
+    assistHeader.appendChild(img);
     divassist.appendChild(divassistcontent);
 
     // Creazione dei contenuti dell'assistenza
