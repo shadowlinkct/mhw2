@@ -1,6 +1,3 @@
-
-
-
 const RIGHT_ARROW = 'img/forward-arrow.png';
 const DOWN_ARROW = 'img/down-arrow.png';
 const BOOKMARKPINNED = 'img/bookmark.png';
@@ -228,3 +225,31 @@ function assistenzabtn() {
 }
 const assistbtn = document.querySelector('.fixed-button');
 assistbtn.addEventListener('click', assistenzabtn);
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("activeSlide");  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("actives");
+    }
+    slides[slideIndex-1].classList.add("activeSlide");  
+    dots[slideIndex-1].classList.add("actives");
+  }
+  
