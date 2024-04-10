@@ -286,7 +286,7 @@ div.centerlink a:hover {
 .dropdown-content p {
   display: block;
   border-bottom: 1px solid #ebebeb;
-  padding: 10px 15px;
+  padding: 10px 1F5px;
   text-decoration: none;
 }
 
@@ -429,9 +429,7 @@ a#alink2:hover {
 }
 
 .infoDiv p {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 5%;
+  padding: 3% 10%;
   font-weight: bold;
   font-family: "PT Sans", sans-serif;
 }
