@@ -877,6 +877,7 @@ margin-bottom: 3vh;
 .dot:hover {
   background-color: #c90404;
 }
+/* Contenitore ( 25% 4, 50% 2, 33.33%; 3 etc) */
 .column {
   float: left;
   width: 25%;
